@@ -1,0 +1,28 @@
+<?php
+
+macro {
+    immutable class ·ns()·class {
+        ···body
+    }
+} >> {
+    class ·class {
+        use \Pre\ImmutableClasses\ImmutableClassesTrait;
+
+        ···body
+    }
+}
+
+macro {
+    function __call(···parameters) {
+        immutability;
+        ···body
+    }
+} >> {
+    function __call(···parameters) {
+        if ($result = $this->handleCallImmutableClassSetters(···parameters)) {
+            return $result;
+        }
+
+        ···body
+    }
+}
