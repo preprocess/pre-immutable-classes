@@ -1,13 +1,18 @@
 <?php
 
-namespace Yay;
+namespace
+{
+    require __DIR__ . "/../vendor/autoload.php";
 
-// let's use a namespace trick, to make non-colliding variables predictable.
+    putenv("PRE_BASE_DIR=" . __DIR__ . "/../");
 
-function md5($value) {
-    return $value;
+    Pre\Plugin\addMacroPath(__DIR__ . "/../src/macros.yay");
 }
 
-putenv("PRE_BASE_DIR=" . __DIR__ . "/..");
-
-require __DIR__ . "/../vendor/autoload.php";
+namespace Yay
+{
+    function md5($value)
+    {
+        return $value;
+    }
+}
