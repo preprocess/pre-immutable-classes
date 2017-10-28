@@ -1,9 +1,3 @@
---DESCRIPTION--
-
-Test immutability fallbacks
-
---GIVEN--
-
 immutable class MyImmutableClass
 {
     public function __call($method, $parameters)
@@ -14,7 +8,7 @@ immutable class MyImmutableClass
     }
 }
 
---EXPECT--
+~~~
 
 class MyImmutableClass
 {
@@ -22,8 +16,8 @@ class MyImmutableClass
 
     public function __call($method, $parameters)
     {
-        if ($result·1 = $this->handleCallImmutableClassSetters($method, $parameters)) {
-            return $result·1;
+        if ($result = $this->handleCallImmutableClassSetters($method, $parameters)) {
+            return $result;
         }
 
         print "fallback";

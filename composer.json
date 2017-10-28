@@ -3,24 +3,17 @@
     "name": "pre/immutable-classes",
     "license": "MIT",
     "require": {
-        "pre/plugin": "^0.7.3"
+        "pre/plugin": "^0.10.0"
     },
     "autoload": {
         "psr-4": {
-            "Pre\\ImmutableClasses\\": "src"
+            "Pre\\ImmutableClasses\\": "source"
         }
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0|^6.0"
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Pre\\ImmutableClasses\\": "tests"
-        }
-    },
     "extra": {
-        "macros": [
-            "src/macros.yay"
-        ]
+        "macros": ["source/macros.yay"]
     }
 }

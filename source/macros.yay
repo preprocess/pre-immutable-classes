@@ -12,7 +12,7 @@ macro {
     }
 }
 
-macro {
+macro ·unsafe {
     function __call(···parameters) {
         immutability;
         ···body
