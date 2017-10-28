@@ -16,8 +16,8 @@ class MyImmutableClass
 
     public function __call($method, $parameters)
     {
-        if ($result·1 = $this->handleCallImmutableClassSetters($method, $parameters)) {
-            return $result·1;
+        if ($result = $this->handleCallImmutableClassSetters($method, $parameters)) {
+            return $result;
         }
 
         print "fallback";
