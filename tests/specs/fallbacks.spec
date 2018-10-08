@@ -16,7 +16,12 @@ class MyImmutableClass
 
     public function __call($method, $parameters)
     {
-        if ($result = $this->handleCallImmutableClassSetters($method, $parameters)) {
+        if (
+            ($result = $this->handleCallImmutableClassSetters(
+                $method,
+                $parameters
+            ))
+        ) {
             return $result;
         }
 
